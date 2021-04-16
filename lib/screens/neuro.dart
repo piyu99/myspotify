@@ -15,11 +15,6 @@ class _NeuroState extends State<Neuro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Get.changeThemeMode(Get.isDarkMode?ThemeMode.light:ThemeMode.dark);
-        },
-      ),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -50,15 +45,15 @@ class _NeuroState extends State<Neuro> {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey[300],
+                      color: Theme.of(context).shadowColor,
                       offset: Offset(30, 10),
-                      blurRadius: 20,
+                      blurRadius: 30,
                       //spreadRadius: 1,
                     ),
                     BoxShadow(
-                      color: Colors.grey[500],
+                      color: Theme.of(context).buttonColor,
                       offset: Offset(-30, -10),
-                      blurRadius: 20,
+                      blurRadius: 30,
                       //spreadRadius: 1,
                     ),
                   ],
@@ -77,13 +72,13 @@ class _NeuroState extends State<Neuro> {
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey,
+                          color:  Theme.of(context).shadowColor,
                           offset: Offset(6, 2),
                           blurRadius: 8,
                           //spreadRadius: 1,
                         ),
                         BoxShadow(
-                          color: Colors.grey,
+                          color:  Theme.of(context).buttonColor,
                           offset: Offset(-6, -2),
                           blurRadius: 10,
                           //spreadRadius: 1,
@@ -97,7 +92,7 @@ class _NeuroState extends State<Neuro> {
               ),
               Expanded(
                 child: Slider(
-                  activeColor: Colors.purpleAccent,
+                  activeColor: Theme.of(context).primaryColor,
                   inactiveColor: Colors.grey,
                   min: 10,
                   max: 100,
@@ -128,13 +123,13 @@ class _NeuroState extends State<Neuro> {
                           decoration: BoxDecoration(
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.grey,
+                                color:  Theme.of(context).shadowColor,
                                 offset: Offset(6, 2),
                                 blurRadius: 8,
                                 //spreadRadius: 1,
                               ),
                               BoxShadow(
-                                color: Colors.grey,
+                                color:  Theme.of(context).buttonColor,
                                 offset: Offset(-6, -2),
                                 blurRadius: 10,
                                 //spreadRadius: 1,
@@ -153,13 +148,13 @@ class _NeuroState extends State<Neuro> {
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey,
+                              color:  Theme.of(context).shadowColor,
                               offset: Offset(6, 2),
                               blurRadius: 8,
                               //spreadRadius: 1,
                             ),
                             BoxShadow(
-                              color: Colors.grey,
+                              color:  Theme.of(context).buttonColor,
                               offset: Offset(-6, -2),
                               blurRadius: 10,
                               //spreadRadius: 1,
@@ -178,13 +173,13 @@ class _NeuroState extends State<Neuro> {
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey,
+                              color:  Theme.of(context).shadowColor,
                               offset: Offset(6, 2),
                               blurRadius: 8,
                               //spreadRadius: 1,
                             ),
                             BoxShadow(
-                              color: Colors.grey,
+                              color:  Theme.of(context).buttonColor,
                               offset: Offset(-6, -2),
                               blurRadius: 10,
                               //spreadRadius: 1,
@@ -202,13 +197,13 @@ class _NeuroState extends State<Neuro> {
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey,
+                              color:  Theme.of(context).shadowColor,
                               offset: Offset(6, 2),
                               blurRadius: 8,
                               //spreadRadius: 1,
                             ),
                             BoxShadow(
-                              color: Colors.grey,
+                              color:  Theme.of(context).buttonColor,
                               offset: Offset(-6, -2),
                               blurRadius: 10,
                               //spreadRadius: 1,
@@ -218,35 +213,28 @@ class _NeuroState extends State<Neuro> {
                           color: Theme.of(context).scaffoldBackgroundColor,
                         ),
                       ),
-                      InkWell(
-                        onTap: (){
-
-                            Get.changeThemeMode(Get.isDarkMode?ThemeMode.light:ThemeMode.dark);
-
-                        },
-                        child: Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: FaIcon(FontAwesomeIcons.search),
-                          ),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                offset: Offset(6, 2),
-                                blurRadius: 8,
-                                //spreadRadius: 1,
-                              ),
-                              BoxShadow(
-                                color: Colors.grey,
-                                offset: Offset(-6, -2),
-                                blurRadius: 10,
-                                //spreadRadius: 1,
-                              ),
-                            ],
-                            shape: BoxShape.circle,
-                            color: Theme.of(context).scaffoldBackgroundColor,
-                          ),
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: FaIcon(FontAwesomeIcons.search),
+                        ),
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color:  Theme.of(context).shadowColor,
+                              offset: Offset(6, 2),
+                              blurRadius: 8,
+                              //spreadRadius: 1,
+                            ),
+                            BoxShadow(
+                              color:  Theme.of(context).buttonColor,
+                              offset: Offset(-6, -2),
+                              blurRadius: 10,
+                              //spreadRadius: 1,
+                            ),
+                          ],
+                          shape: BoxShape.circle,
+                          color: Theme.of(context).scaffoldBackgroundColor,
                         ),
                       ),
                     ],
