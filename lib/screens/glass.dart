@@ -42,8 +42,8 @@ class _GlassMorphState extends State<GlassMorph> {
                             Text(
                               'PLAYING FROM ALBUM',
                               style: TextStyle(fontSize: 12, color: Colors.white
-                                  //fontWeight: FontWeight.bold
-                                  ),
+                                //fontWeight: FontWeight.bold
+                              ),
                             ),
                             Text(
                               'LA LA LAND',
@@ -58,7 +58,7 @@ class _GlassMorphState extends State<GlassMorph> {
                       Expanded(
                         flex: 6,
                         child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
+                          borderRadius: BorderRadius.circular(16),
                           child: Container(
                             decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.3),
@@ -71,7 +71,10 @@ class _GlassMorphState extends State<GlassMorph> {
                                   sigmaY: 12,
                                 ),
                                 child: Container(
-                                  child: Image.asset('assets/la.jpg'),
+                                  child: Hero(
+                                    transitionOnUserGestures: true,
+                                      child: Image.asset('assets/la.jpg'),
+                                  tag: 'hero',),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(6),
                                   ),
@@ -98,17 +101,17 @@ class _GlassMorphState extends State<GlassMorph> {
                                   children: [
                                     ListTile(
                                       title: Text('A Lovely Night',
-                                      style: TextStyle(
-                                        color: Colors.white
-                                      ),),
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),),
                                       subtitle: Text('Ryan Gosling, Emma Stone'),
                                       trailing: Container(
                                         child: Padding(
                                           padding: const EdgeInsets.all(18.0),
                                           child: FaIcon(FontAwesomeIcons.heart),
                                         ),
-                                        ),
                                       ),
+                                    ),
                                     Slider(
                                       activeColor: Colors.deepPurple,
                                       inactiveColor: Colors.grey,

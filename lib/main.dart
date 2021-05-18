@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:neumorphism/screens/bottomListTile.dart';
 import 'package:neumorphism/screens/bottomSheet.dart';
 import 'package:neumorphism/screens/glass.dart';
 import 'package:neumorphism/screens/neuro.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: Themes().darkTheme,
         //darkTheme: Themes().darkTheme,
-        home: GlassMorph()
+        home: BottomListTile()
     );
 
   }
