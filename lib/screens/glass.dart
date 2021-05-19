@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:neumorphism/screens/rating.dart';
+import 'package:neumorphism/utils/constants.dart';
 
 class GlassMorph extends StatefulWidget {
   @override
@@ -12,6 +14,7 @@ class GlassMorph extends StatefulWidget {
 }
 
 double play = 40;
+Error error= new Error();
 
 class _GlassMorphState extends State<GlassMorph> {
   @override
@@ -105,13 +108,22 @@ class _GlassMorphState extends State<GlassMorph> {
                                             color: Colors.white
                                         ),),
                                       subtitle: Text('Ryan Gosling, Emma Stone'),
-                                      trailing: Container(
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(18.0),
-                                          child: FaIcon(FontAwesomeIcons.heart),
+                                      trailing: InkWell(
+                                        onTap: (){
+                                          error.showerror(context);
+                                          setState(() {
+                                            Constants.ratings=true;
+                                          });
+                                        },
+                                        child: Container(
+                                            child : Constants.ratings?
+                                        FaIcon(FontAwesomeIcons.solidHeart,
+                                          color: Colors.deepPurple,)
+                                            : FaIcon(FontAwesomeIcons.heart)
                                         ),
                                       ),
                                     ),
+
                                     Slider(
                                       activeColor: Colors.deepPurple,
                                       inactiveColor: Colors.grey,
